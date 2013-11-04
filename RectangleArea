@@ -1,0 +1,21 @@
+namespace RectangleArea
+{
+    using System;
+
+    class RectangleArea
+    {
+        static void Main(string[] args)
+        {
+            /*Write an expression that calculates rectangle’s area by given width and height.*/
+            Console.WriteLine("Area of rectangle = a * b");
+
+            Console.Write("a = ");
+            double a = Double.Parse(Console.ReadLine());
+
+            Console.Write("b = ");
+            double b = Double.Parse(Console.ReadLine());
+
+            Console.WriteLine("The area is {0}", a * b);
+        }
+    }
+}
