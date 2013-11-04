@@ -1,0 +1,22 @@
+namespace ExctractBitNumber
+{
+    using System;
+
+    class ExctractBitNumber
+    {
+        static void Main(string[] args)
+        {
+            /*Write an expression that extracts from a given integer i the value of a given bit number b. Example: i=5; b=2  value=1.*/
+
+            Console.Write("Type an integer number i = ");
+            int i = Int32.Parse(Console.ReadLine());
+
+            Console.Write("Type a bit number b = ");
+            int b = Int32.Parse(Console.ReadLine());
+
+            int mask = 1 << b;
+
+            Console.WriteLine((i & mask) != 0 ? "Position {0} bit = 1." : "Position {0} bit = 0.", b);
+        }
+    }
+}
