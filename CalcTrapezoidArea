@@ -1,0 +1,25 @@
+namespace CalcTrapezoidArea
+{
+    using System;
+
+    class CalcTrapezoidArea
+    {
+        static void Main(string[] args)
+        {
+            /*Write an expression that calculates trapezoid's area by given sides a and b and height h.*/
+
+            Console.WriteLine("Area of trapezoid = (a + b) / 2 * h");
+
+            Console.Write("a = ");
+            double a = Double.Parse(Console.ReadLine());
+
+            Console.Write("b = ");
+            double b = Double.Parse(Console.ReadLine());
+
+            Console.Write("h = ");
+            double h = Double.Parse(Console.ReadLine());
+
+            Console.WriteLine("The surface is {0}", (a + b) / 2 * h);
+        }
+    }
+}
