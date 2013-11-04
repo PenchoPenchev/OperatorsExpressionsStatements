@@ -1,0 +1,29 @@
+namespace CheckNumberRightToLeft
+{
+    using System;
+
+    class CheckNumberRightToLeft
+    {
+        static void Main(string[] args)
+        {
+            /*Write an expression that checks for given integer if its third digit (right-to-left) is 7. E. g. 1732  true*/
+
+            Console.Write("Type a number: ");
+            string number = Console.ReadLine();
+
+            for (int i = number.Length; i > 0; i--)
+            {
+                if (i == number.Length - 3 && number[i] == '7')
+                {
+                    Console.WriteLine("The third number right to left is 7");
+                    break;
+                }
+                else if (i == number.Length - 3 && number[i] != '7')
+                {
+                    Console.WriteLine("The third number right to left is not 7");
+                    break;
+                }
+            }
+        }
+    }
+}
