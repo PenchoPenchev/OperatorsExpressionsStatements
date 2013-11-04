@@ -1,0 +1,55 @@
+namespace ExchangeInternalBitPositions
+{
+    using System;
+
+    class ExchangeInternalBitPositions
+    {
+        static void Main(string[] args)
+        {
+            /*Write a program that exchanges bits 3, 4 and 5 with bits 24, 25 and 26 of given 32-bit unsigned integer.*/
+
+            long number = 623553158;//100101001010101010101010000110 - 623553158
+
+            int firstPosition = 3;
+
+            int secondPosition = 24;
+
+            while (firstPosition < 6 && secondPosition < 27)
+            {
+                int firstMask = 1 << firstPosition;
+
+                int secondMask = 1 << secondPosition;
+
+                int b1 = (number & firstMask) != 0 ? 1 : 0;
+
+                int b2 = (number & secondMask) != 0 ? 1 : 0;
+
+                if (b1 != b2)
+                {
+                    if (b1 != 0)
+                    {
+                        number = number ^ firstMask; // second way - number = number & (~(1 << firstPosition));
+                    }
+                    else if (b1 == 0)
+                    {
+                        number = number | firstMask; // second way - number = number | (1 << firstPosition);
+                    }
+
+                    if (b2 != 0)
+                    {
+                        number = number ^ secondMask;
+                    }
+                    else if (b2 == 0)
+                    {
+                        number = number | secondMask;
+                    }
+                }
+
+                firstPosition++;
+                secondPosition++;
+            }
+
+            Console.WriteLine(number); //100000001010101010101010101110 - 539667118
+        }
+    }
+}
