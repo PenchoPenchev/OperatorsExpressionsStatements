@@ -1,0 +1,28 @@
+namespace CheckIsPrimeNumber
+{
+    using System;
+
+    class CheckIsPrimeNumber
+    {
+        static void Main(string[] args)
+        {
+            /*Write an expression that checks if given positive integer number n (n ≤ 100) is prime. E.g. 37 is prime.*/
+
+            Console.Write("Type a positive number < 100: ");
+            int n = Int32.Parse(Console.ReadLine());
+
+            bool isPrime = true;
+
+            for (int i = 2; i < 100; i++)
+            {
+                if (n % i == 0 && i != n)
+                {
+                    isPrime = false;
+                }
+            }
+
+            Console.WriteLine(isPrime ? "{0} is a Prime number" : "{0} is not a Prime number", n);
+
+        }
+    }
+}
