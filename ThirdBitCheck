@@ -1,0 +1,43 @@
+namespace ThirdBitCheck
+{
+    using System;
+
+    class ThirdBitCheck
+    {
+        static void Main(string[] args)
+        {
+            /*Write a boolean expression for finding if the bit 3 (counting from 0) of a given integer is 1 or 0.*/
+
+            Console.WriteLine("First way");
+            Console.Write("Type a number: ");
+            int a = Int16.Parse(Console.ReadLine());
+
+            string binary = Convert.ToString(a, 2);
+
+            Console.WriteLine(binary.PadLeft(10));
+
+            if (binary.Length >= 4)
+            {
+                for (int i = binary.Length; i >= 0; i--)
+                {
+                    if (i == binary.Length - 4)
+                    {
+                        Console.WriteLine(binary[i] == '1' ? "The third bit is 1" : "The third bit is 0");
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("The third bit is 0"); 
+            }
+            
+            Console.WriteLine("Second way");
+
+            byte b = 8; //1000
+            byte c = (byte)(a & b);// 0 & 0 = 0; 1 & 0 = 0; 0 & 1 = 0; 1 & 1 = 1; 
+
+            Console.WriteLine(c != 0 ? "The third bit is 1" : "The third bit is 0");
+        }
+    }
+}
