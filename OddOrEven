@@ -1,0 +1,16 @@
+namespace OddOrEven
+{
+    using System;
+
+    class OddOrEven
+    {
+        static void Main(string[] args)
+        {
+            /*Write an expression that checks if given integer is odd or even.*/
+            Console.Write("Type a number: ");
+            int number = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine(number % 2 == 0 ? "{0} is an Even number" : "{0} is an Odd number", number);
+        }
+    }
+}
