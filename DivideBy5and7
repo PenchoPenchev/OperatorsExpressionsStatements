@@ -1,0 +1,16 @@
+namespace DivideBy5and7
+{
+    using System;
+
+    class DivideBy5and7
+    {
+        static void Main(string[] args)
+        {
+            /*Write a boolean expression that checks for given integer if it can be divided (without remainder) by 7 and 5 in the same                  time.*/
+            Console.Write("Type a number: ");
+            int number = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine(number % (5 * 7) == 0 ? "{0} can be divided by 5 and 7" : "{0} can Not divided by 5 and 7", number);
+        }
+    }
+}
