@@ -1,0 +1,60 @@
+namespace ExchangeInternalBitPositionsDynamic
+{
+    using System;
+
+    class ExchangeInternalBitPositionsDynamic
+    {
+        static void Main(string[] args)
+        {
+            /** Write a program that exchanges bits {p, p+1, …, p+k-1) with bits {q, q+1, …, q+k-1} of given 32-bit unsigned integer.*/
+
+            Console.Write("Type a number: ");
+            long number = long.Parse(Console.ReadLine());
+
+            Console.Write("p = ");
+            int firstPosition = Int32.Parse(Console.ReadLine());
+
+            int p = firstPosition;
+
+            Console.Write("q = ");
+            int secondPosition = Int32.Parse(Console.ReadLine());
+
+            while (firstPosition < p + 3)
+            {
+                int firstMask = 1 << firstPosition;
+
+                int secondMask = 1 << secondPosition;
+
+                int b1 = (number & firstMask) != 0 ? 1 : 0;
+
+                int b2 = (number & secondMask) != 0 ? 1 : 0;
+
+                if (b1 != b2)
+                {
+                    if (b1 != 0)
+                    {
+                        number = number & (~(1 << firstPosition));
+                    }
+                    else if (b1 == 0)
+                    {
+                        number = number | (1 << firstPosition);
+                    }
+
+                    if (b2 != 0)
+                    {
+                        number = number & (~(1 << secondPosition));
+                    }
+                    else if (b2 == 0)
+                    {
+                        number = number | (1 << secondPosition);
+                    }
+                }
+
+                firstPosition++;
+                secondPosition++;
+            }
+
+            Console.WriteLine(number);
+        }
+    }
+}
