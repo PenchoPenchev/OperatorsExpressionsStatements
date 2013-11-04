@@ -1,0 +1,21 @@
+namespace CheckPointCircle
+{
+    using System;
+
+    class CheckPointCircle
+    {
+        static void Main(string[] args)
+        {
+            /*Write an expression that checks if given point (x,  y) is within a circle K(O, 5).*/
+            Console.Write("x = ");
+            double x = Double.Parse(Console.ReadLine());
+
+            Console.Write("y = ");
+            double y = Double.Parse(Console.ReadLine());
+
+            double check = (Math.Pow(x, 2) + Math.Pow(y, 2));
+
+            Console.WriteLine(check <= 25 ? "The dot is IN the circle" : "The dot is Not in from the circle");
+        }
+    }
+}
